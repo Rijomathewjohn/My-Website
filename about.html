@@ -10,14 +10,25 @@
   <body>
     <div>
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container">
-          <a class="navbar-brand" href="index.html">My Portfolio</a>
-          <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <a class="navbar-brand" href="index.html">Rijo M John</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto gap-2">
+              <li class="nav-item">
+                <a class="btn btn-outline-light" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-outline-light" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#contactModal">
+                  Contact
+                </button>
+              </li>
             </ul>
           </div>
         </div>
@@ -25,7 +36,7 @@
 
       <!-- About Content -->
       <div class="container mt-5">
-        <h2 class="text-left">About Me</h2>
+        <h2 class="text-left text-white">About Me</h2>
         <div class="card shadow-sm rounded-3 p-4 my-4 transparent-box">
           <div class="row g-3 align-items-center">
             <!-- Left: Photo -->
@@ -45,9 +56,8 @@
         </div>
 
         <div class="card shadow-sm rounded-2 p-4 mb-4 transparent-box">
-
           <p class="justified-text">
-            I'm Rijo M John, a passionate Junior DevOps Engineer with a
+             I'm Rijo M John, a passionate Junior DevOps Engineer with a
                 degree in Computer Science Engineering from Mar Ephraem College
                 of Engineering and Technology. With hands-on experience in CI/CD
                 automation, Infrastructure as Code (IaC), containerization, and
@@ -84,7 +94,6 @@
           <!-- Projects -->
           <div class="col-md-6">
             <div class="card h-100 shadow-sm transparent-box">
-
               <div class="card-body">
                 <h4 class="card-title mb-3">Projects</h4>
                 <ul class="list-group list-group-flush">
@@ -121,7 +130,6 @@
           <!-- Skills -->
           <div class="col-md-6">
             <div class="card h-100 shadow-sm transparent-box">
-
               <div class="card-body">
                 <h4 class="card-title mb-3">Technical Skills</h4>
                 <ul class="list-group list-group-flush">
@@ -148,11 +156,40 @@
                     Kubernetes, Terraform, Git, Node-RED, Grafana
                   </li>
                   <li class="list-group-item">
-                    <strong>Virtualization & Miscellaneous:</strong> VMware,
+                    <strong>Others:</strong> VMware,
                     VirtualBox, Blender
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Modal -->
+      <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content bg-light">
+            <div class="modal-header">
+              <h5 class="modal-title" id="contactModalLabel">Contact Me</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form method="POST" action="/send-email">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name:</label>
+                  <input type="text" class="form-control" id="name" name="name" required />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address:</label>
+                  <input type="email" class="form-control" id="email" name="email" required />
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message:</label>
+                  <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Send</button>
+              </form>
             </div>
           </div>
         </div>
@@ -163,8 +200,8 @@
         <hr />
         <p>&copy; 2025 Rijo's Portfolio</p>
       </footer>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
   </body>
 </html>
