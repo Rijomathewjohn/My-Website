@@ -3,8 +3,9 @@ name: Deploy Bootstrap Site to GitHub Pages
 on:
   push:
     branches:
-      - main # or 'master', based on your default branch
+      - main # or master
 
+# ✅ REQUIRED Permissions for GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -12,6 +13,10 @@ permissions:
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
 
     steps:
@@ -21,10 +26,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload static site to GitHub Pages
+      - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
