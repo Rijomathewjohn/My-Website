@@ -1,6 +1,10 @@
-body {
-  background-color: #0f9797;
+html, body {
+  height: 100%;
+  margin: 0;
+  background: url('images/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
+
 
 .justified-text {
   text-align: justify;
