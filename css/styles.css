@@ -1,7 +1,7 @@
 html, body {
   height: 100%;
   margin: 0;
-  background: url('images/bg.jpg') no-repeat center center fixed;
+  background: url("../images/bg.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -55,4 +55,14 @@ html, body {
 .custom-navbar .nav-link:hover {
   color: #050505 !important; /* Yellow hover effect */
   background-color: transparent;
+}
+
+
+/* Transparent content box */
+.transparent-box {
+  background-color: rgba(0, 0, 0, 0.55); /* adjustable transparency */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
