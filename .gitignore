@@ -1,0 +1,24 @@
+# Ignore everything by default
+*
+
+# Allow only the needed project files
+!index.html
+!about.html
+!css/
+!images/
+
+# Inside css folder, allow all css files
+css/*
+!css/*.css
+
+# Inside images folder, allow common image types
+images/*
+!images/*.png
+!images/*.jpg
+!images/*.jpeg
+!images/*.svg
+!images/*.gif
+
+# Ignore environment files
+.env
+
