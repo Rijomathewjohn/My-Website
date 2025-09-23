@@ -1,5 +1,0 @@
-# Ignore environment variables
-.env
-
-# Node.js folders
-node_modules/
